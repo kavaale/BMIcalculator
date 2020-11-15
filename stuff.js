@@ -1,7 +1,32 @@
 $(function (){
 
-    function calcBMI(event) {
-        event.preventDefault();
+    var valRules = {
+            weightIn: {
+                required: true,
+                max: 353,
+                min: 88
+            },
+            heightIn: {
+                required: true,
+                max: 79,
+                min: 59
+            }
+        };
+
+    var valMessages = {
+            weightIn: {
+                required: "Must input weight",
+                max: "Weight too high",
+                min: "Weight too low"
+            },
+            heightIn: {
+                required: "Must input height",
+                max: "Height too high",
+                min: "Height too low"
+            }
+        };
+
+    function calcBMI() {
         var weight = parseFloat($("#weightIn").val());
         var height = parseFloat($("#heightIn").val());
 
@@ -32,32 +57,6 @@ $(function (){
         }
         $("#bmiout").text(bmiclass + " (BMI " + bmi.toFixed(1) + ") at " + weight + " lbs")
     }
-
-    var valRules = {
-            weightIn: {
-                required: true,
-                max: 353,
-                min: 88
-            },
-            heightIn: {
-                required: true,
-                max: 79,
-                min: 59
-            }
-        };
-
-    var valMessages = {
-            weightIn: {
-                required: "Must input weight",
-                max: "Weight too high",
-                min: "Weight too low"
-            },
-            heightIn: {
-                required: "Must input height",
-                max: "Height too high",
-                min: "Height too low"
-            }
-        };
 
     $("form").validate({
         rules: valRules,
