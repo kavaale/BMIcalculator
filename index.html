@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+</head>
+<body>
+<h1>BMI Calculator</h1>
+<form>
+    <div>
+        <label for="heightIn">Height</label>
+        <input name="heightIn" id="heightIn" type="number" min="59" max="79" required>
+    </div>
+    <div>
+        <label for="weightIn">Weight</label>
+        <input name="weightIn" id="weightIn" type="number" min="88" max="353" required>
+    </div>
+    <button type="submit" id="submitButton">Calculate</button>
+</form>
+<p><span id="bmiout"></span></p>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+<script src="stuff.js"></script>
+</body>
+</html>
